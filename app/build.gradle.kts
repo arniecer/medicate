@@ -1,10 +1,13 @@
+
 plugins {
-    id("com.android.application") version "9.3.3"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.4.21"
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.medicate.app"
+
     compileSdk {
         version = release(37) {
             minorApiLevel = 1
@@ -25,8 +28,37 @@ android {
 }
 
 dependencies {
-    implementation(platform("androidx.compose:compose-bom:2026.11.01"))
-    implementation("androidx.activity:activity-compose:1.13.0")
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material3:material3")
+
+    // Jetpack Compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+
+    // Navegacion entre pantallas
+    implementation(libs.androidx.navigation.compose)
+
+    // ViewModel y Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    // Corrutinas
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Preferencias
+    implementation(libs.androidx.datastore.preferences)
+
+    // API REST
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
 }
+
