@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Medícate</string>
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_calendario">Calendario</string>
+    <string name="nav_inventario">Inventario</string>
+    <string name="nav_avisos">Avisos</string>
 </resources>
