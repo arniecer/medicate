@@ -14,9 +14,4 @@ Para generar el APK de depuración desde la terminal, ejecuta `./gradlew :app:as
 
 El código Kotlin está en `app/src/main/java/com/medicate/app`. `MainActivity` carga la interfaz de Compose y aplica el tema de `ui/theme`. La pantalla inicial muestra el nombre de la aplicación.
 
-El equipo añadirá estos paquetes conforme implemente las funcionalidades siguiendo MVVM:
-
-- `ui/screens` y `ui/components` para pantallas y componentes reutilizables.
-- `viewmodel` para gestionar el estado y las acciones de cada pantalla.
-- `data` para repositorios, entidades y acceso a la base de datos local.
-- `navigation` para las rutas entre pantallas.
+El esqueleto sigue MVVM y reserva `ui/navigation` para las rutas entre pantallas. La responsabilidad de cada paquete y las tecnologías previstas se detallan en [ARQUITECTURA.md](ARQUITECTURA.md).
